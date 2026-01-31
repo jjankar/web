@@ -3,25 +3,500 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Learning Hub</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        nav {
+            background: #2d3748;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            gap: 2rem;
+            flex-wrap: wrap;
         }
-        h1 {
+
+        nav a {
             color: white;
-            font-size: 3rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 8px 8px 0 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-header.it {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+
+        .section-header.lifescience {
+            background: linear-gradient(135deg, #ee0979 0%, #ff6a00 100%);
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+        }
+
+        .section-header .toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .section-header.collapsed .toggle {
+            transform: rotate(-90deg);
+        }
+
+        .section-content {
+            background: white;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .section-content.hidden {
+            display: none;
+        }
+
+        .subsection {
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .subsection:last-child {
+            border-bottom: none;
+        }
+
+        .subsection-header {
+            padding: 1rem 1.5rem;
+            background: #f8fafc;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .subsection-header:hover {
+            background: #edf2f7;
+        }
+
+        .subsection-header h3 {
+            color: #4a5568;
+            font-size: 1.2rem;
+        }
+
+        .subsection-header .arrow {
+            color: #718096;
+            transition: transform 0.3s;
+        }
+
+        .subsection-header.expanded .arrow {
+            transform: rotate(90deg);
+        }
+
+        .subsection-content {
+            padding: 1.5rem;
+            background: white;
+            display: none;
+        }
+
+        .subsection-content.show {
+            display: block;
+        }
+
+        .topic-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .topic-card {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .topic-card.it {
+            border-left-color: #11998e;
+        }
+
+        .topic-card.lifescience {
+            border-left-color: #ee0979;
+        }
+
+        .topic-card h4 {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .topic-card p {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .topic-list {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Hello World!</h1>
+    <header>
+        <h1>Learning Hub</h1>
+        <p>Your gateway to IT and Life Sciences knowledge</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#it">IT</a></li>
+            <li><a href="#lifescience">Life Science</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- IT Section -->
+        <section class="section" id="it">
+            <div class="section-header it" onclick="toggleSection(this)">
+                <h2>Information Technology</h2>
+                <span class="toggle">&#9660;</span>
+            </div>
+            <div class="section-content">
+                <!-- DevOps -->
+                <div class="subsection">
+                    <div class="subsection-header" onclick="toggleSubsection(this)">
+                        <h3>DevOps</h3>
+                        <span class="arrow">&#9654;</span>
+                    </div>
+                    <div class="subsection-content">
+                        <div class="topic-list">
+                            <div class="topic-card it">
+                                <h4>CI/CD Pipelines</h4>
+                                <p>Continuous Integration and Deployment automation</p>
+                            </div>
+                            <div class="topic-card it">
+                                <h4>Containerization</h4>
+                                <p>Docker, Kubernetes, and container orchestration</p>
+                            </div>
+                            <div class="topic-card it">
+                                <h4>Infrastructure as Code</h4>
+                                <p>Terraform, Ansible, and automation tools</p>
+                            </div>
+                            <div class="topic-card it">
+                                <h4>Monitoring & Logging</h4>
+                                <p>Prometheus, Grafana, ELK Stack</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Programming -->
+                <div class="subsection">
+                    <div class="subsection-header" onclick="toggleSubsection(this)">
+                        <h3>Programming</h3>
+                        <span class="arrow">&#9654;</span>
+                    </div>
+                    <div class="subsection-content">
+                        <div class="topic-list">
+                            <div class="topic-card it">
+                                <h4>Python</h4>
+                                <p>General purpose programming and data science</p>
+                            </div>
+                            <div class="topic-card it">
+                                <h4>JavaScript</h4>
+                                <p>Web development and Node.js</p>
+                            </div>
+                            <div class="topic-card it">
+                                <h4>Go</h4>
+                                <p>Systems programming and cloud-native apps</p>
+                            </div>
+                            <div class="topic-card it">
+                                <h4>Rust</h4>
+                                <p>Memory-safe systems programming</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud Computing -->
+                <div class="subsection">
+                    <div class="subsection-header" onclick="toggleSubsection(this)">
+                        <h3>Cloud Computing</h3>
+                        <span class="arrow">&#9654;</span>
+                    </div>
+                    <div class="subsection-content">
+                        <div class="topic-list">
+                            <div class="topic-card it">
+                                <h4>AWS</h4>
+                                <p>Amazon Web Services ecosystem</p>
+                            </div>
+                            <div class="topic-card it">
+                                <h4>Azure</h4>
+                                <p>Microsoft cloud platform</p>
+                            </div>
+                            <div class="topic-card it">
+                                <h4>GCP</h4>
+                                <p>Google Cloud Platform services</p>
+                            </div>
+                            <div class="topic-card it">
+                                <h4>Serverless</h4>
+                                <p>Functions as a Service (FaaS)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cybersecurity -->
+                <div class="subsection">
+                    <div class="subsection-header" onclick="toggleSubsection(this)">
+                        <h3>Cybersecurity</h3>
+                        <span class="arrow">&#9654;</span>
+                    </div>
+                    <div class="subsection-content">
+                        <div class="topic-list">
+                            <div class="topic-card it">
+                                <h4>Network Security</h4>
+                                <p>Firewalls, VPNs, and network protection</p>
+                            </div>
+                            <div class="topic-card it">
+                                <h4>Application Security</h4>
+                                <p>Secure coding and vulnerability assessment</p>
+                            </div>
+                            <div class="topic-card it">
+                                <h4>Identity Management</h4>
+                                <p>Authentication and authorization systems</p>
+                            </div>
+                            <div class="topic-card it">
+                                <h4>Incident Response</h4>
+                                <p>Threat detection and mitigation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Life Science Section -->
+        <section class="section" id="lifescience">
+            <div class="section-header lifescience" onclick="toggleSection(this)">
+                <h2>Life Sciences</h2>
+                <span class="toggle">&#9660;</span>
+            </div>
+            <div class="section-content">
+                <!-- Molecular Biology -->
+                <div class="subsection">
+                    <div class="subsection-header" onclick="toggleSubsection(this)">
+                        <h3>Molecular Biology</h3>
+                        <span class="arrow">&#9654;</span>
+                    </div>
+                    <div class="subsection-content">
+                        <div class="topic-list">
+                            <div class="topic-card lifescience">
+                                <h4>DNA & RNA</h4>
+                                <p>Nucleic acid structure and function</p>
+                            </div>
+                            <div class="topic-card lifescience">
+                                <h4>Protein Synthesis</h4>
+                                <p>Transcription and translation processes</p>
+                            </div>
+                            <div class="topic-card lifescience">
+                                <h4>Gene Expression</h4>
+                                <p>Regulation and epigenetics</p>
+                            </div>
+                            <div class="topic-card lifescience">
+                                <h4>CRISPR</h4>
+                                <p>Gene editing technologies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Biochemistry -->
+                <div class="subsection">
+                    <div class="subsection-header" onclick="toggleSubsection(this)">
+                        <h3>Biochemistry</h3>
+                        <span class="arrow">&#9654;</span>
+                    </div>
+                    <div class="subsection-content">
+                        <div class="topic-list">
+                            <div class="topic-card lifescience">
+                                <h4>Enzymology</h4>
+                                <p>Enzyme kinetics and mechanisms</p>
+                            </div>
+                            <div class="topic-card lifescience">
+                                <h4>Metabolism</h4>
+                                <p>Metabolic pathways and regulation</p>
+                            </div>
+                            <div class="topic-card lifescience">
+                                <h4>Structural Biology</h4>
+                                <p>Protein and macromolecule structures</p>
+                            </div>
+                            <div class="topic-card lifescience">
+                                <h4>Signal Transduction</h4>
+                                <p>Cell signaling pathways</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Biotechnology -->
+                <div class="subsection">
+                    <div class="subsection-header" onclick="toggleSubsection(this)">
+                        <h3>Biotechnology</h3>
+                        <span class="arrow">&#9654;</span>
+                    </div>
+                    <div class="subsection-content">
+                        <div class="topic-list">
+                            <div class="topic-card lifescience">
+                                <h4>Recombinant DNA</h4>
+                                <p>Cloning and genetic engineering</p>
+                            </div>
+                            <div class="topic-card lifescience">
+                                <h4>Biopharmaceuticals</h4>
+                                <p>Drug development and production</p>
+                            </div>
+                            <div class="topic-card lifescience">
+                                <h4>Fermentation</h4>
+                                <p>Industrial bioprocessing</p>
+                            </div>
+                            <div class="topic-card lifescience">
+                                <h4>Synthetic Biology</h4>
+                                <p>Designing biological systems</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bioinformatics -->
+                <div class="subsection">
+                    <div class="subsection-header" onclick="toggleSubsection(this)">
+                        <h3>Bioinformatics</h3>
+                        <span class="arrow">&#9654;</span>
+                    </div>
+                    <div class="subsection-content">
+                        <div class="topic-list">
+                            <div class="topic-card lifescience">
+                                <h4>Sequence Analysis</h4>
+                                <p>DNA and protein sequence alignment</p>
+                            </div>
+                            <div class="topic-card lifescience">
+                                <h4>Genomics</h4>
+                                <p>Whole genome analysis and annotation</p>
+                            </div>
+                            <div class="topic-card lifescience">
+                                <h4>Proteomics</h4>
+                                <p>Large-scale protein studies</p>
+                            </div>
+                            <div class="topic-card lifescience">
+                                <h4>Systems Biology</h4>
+                                <p>Network modeling and analysis</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Learning Hub - Expand Your Knowledge</p>
+    </footer>
+
+    <script>
+        function toggleSection(header) {
+            header.classList.toggle('collapsed');
+            const content = header.nextElementSibling;
+            content.classList.toggle('hidden');
+        }
+
+        function toggleSubsection(header) {
+            header.classList.toggle('expanded');
+            const content = header.nextElementSibling;
+            content.classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
