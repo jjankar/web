@@ -62,6 +62,82 @@ main {
     padding: 2rem;
 }
 
+/* Landing Page Category Grid */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.category-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 4px solid #667eea;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.category-card.technology {
+    border-top-color: #11998e;
+}
+
+.category-card.sciences {
+    border-top-color: #667eea;
+}
+
+.category-card.languages {
+    border-top-color: #f093fb;
+}
+
+.category-card.business {
+    border-top-color: #ee0979;
+}
+
+.category-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.category-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #2d3748;
+}
+
+.category-card p {
+    color: #718096;
+    margin-bottom: 1rem;
+}
+
+.category-topics {
+    list-style: none;
+    color: #4a5568;
+    font-size: 0.9rem;
+}
+
+.category-topics li {
+    padding: 0.25rem 0;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.category-topics li::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: #a0aec0;
+}
+
+/* Section Pages */
 .section {
     margin-bottom: 3rem;
 }
@@ -77,11 +153,44 @@ main {
     align-items: center;
 }
 
-.section-header.it {
+.section-header.programming {
     background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
 }
 
+.section-header.devops {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.section-header.cloud {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.section-header.security {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: #2d3748;
+}
+
+.section-header.math {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.section-header.physics {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.section-header.chemistry {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
 .section-header.lifescience {
+    background: linear-gradient(135deg, #ee0979 0%, #ff6a00 100%);
+}
+
+.section-header.english {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.section-header.agile {
     background: linear-gradient(135deg, #ee0979 0%, #ff6a00 100%);
 }
 
@@ -174,11 +283,43 @@ main {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.topic-card.it {
+.topic-card.programming {
     border-left-color: #11998e;
 }
 
+.topic-card.devops {
+    border-left-color: #4facfe;
+}
+
+.topic-card.cloud {
+    border-left-color: #fa709a;
+}
+
+.topic-card.security {
+    border-left-color: #a8edea;
+}
+
+.topic-card.math {
+    border-left-color: #667eea;
+}
+
+.topic-card.physics {
+    border-left-color: #4facfe;
+}
+
+.topic-card.chemistry {
+    border-left-color: #43e97b;
+}
+
 .topic-card.lifescience {
+    border-left-color: #ee0979;
+}
+
+.topic-card.english {
+    border-left-color: #f093fb;
+}
+
+.topic-card.agile {
     border-left-color: #ee0979;
 }
 
@@ -190,6 +331,19 @@ main {
 .topic-card p {
     color: #718096;
     font-size: 0.9rem;
+}
+
+/* Back link */
+.back-link {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    text-decoration: underline;
 }
 
 footer {
@@ -209,6 +363,10 @@ footer {
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
     }
 
     .topic-list {

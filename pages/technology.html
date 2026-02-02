@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology - Learning Hub</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Technology</h1>
+        <p>Programming, DevOps, Cloud Computing & Cybersecurity</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="technology.html">Technology</a></li>
+            <li><a href="sciences.html">Sciences</a></li>
+            <li><a href="languages.html">Languages</a></li>
+            <li><a href="business.html">Business</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <a href="../index.html" class="back-link">&larr; Back to Home</a>
+
+        <!-- Programming Section -->
+        <section class="section" id="programming">
+            <div class="section-header programming" onclick="toggleSection(this)">
+                <h2>Programming</h2>
+                <span class="toggle">&#9660;</span>
+            </div>
+            <div class="section-content">
+                <div class="subsection">
+                    <div class="subsection-header" onclick="toggleSubsection(this)">
+                        <h3>Python</h3>
+                        <span class="arrow">&#9654;</span>
+                    </div>
+                    <div class="subsection-content">
+                        <div class="topic-list">
+                            <div class="topic-card programming">
+                                <h4>Python Basics</h4>
+                                <p>Variables, data types, control flow, functions</p>
+                            </div>
+                            <div class="topic-card programming">
+                                <h4>Object-Oriented Python</h4>
+                                <p>Classes, inheritance, polymorphism, encapsulation</p>
+                            </div>
+                            <div class="topic-card programming">
+                                <h4>Data Science</h4>
+                                <p>NumPy, Pandas, data manipulation and analysis</p>
+                            </div>
+                            <div class="topic-card programming">
+                                <h4>Web Development</h4>
+                                <p>Django, Flask, FastAPI frameworks</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <div class="subsection-header" onclick="toggleSubsection(this)">
+                        <h3>JavaScript</h3>
+                        <span class="arrow">&#9654;</span>
+                    </div>
+                    <div class="subsection-content">
+                        <div class="topic-list">
+                            <div class="topic-card programming">
+                                <h4>JavaScript Fundamentals</h4>
+                                <p>ES6+, async/await, DOM manipulation</p>
+                            </div>
+                            <div class="topic-card programming">
+                                <h4>React</h4>
+                                <p>Components, hooks, state management</p>
+                            </div>
+                            <div class="topic-card programming">
+                                <h4>Node.js</h4>
+                                <p>Server-side JavaScript, Express, APIs</p>
+                            </div>
+                            <div class="topic-card programming">
+                                <h4>TypeScript</h4>
+                                <p>Type safety, interfaces, generics</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <div class="subsection-header" onclick="toggleSubsection(this)">
+                        <h3>Go & Rust</h3>
+                        <span class="arrow">&#9654;</span>
+                    </div>
+                    <div class="subsection-content">
+                        <div class="topic-list">
+                            <div class="topic-card programming">
+                                <h4>Go Fundamentals</h4>
+                                <p>Goroutines, channels, concurrency patterns</p>
+                            </div>
+                            <div class="topic-card programming">
+                                <h4>Go Web Services</h4>
+                                <p>Building REST APIs and microservices</p>
+                            </div>
+                            <div class="topic-card programming">
+                                <h4>Rust Basics</h4>
+                                <p>Ownership, borrowing, lifetimes</p>
+                            </div>
+                            <div class="topic-card programming">
+                                <h4>Systems Programming</h4>
+                                <p>Memory-safe low-level programming</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <div class="subsection-header" onclick="toggleSubsection(this)">
+                        <h3>SQL & Databases</h3>
+                        <span class="arrow">&#9654;</span>
+                    </div>
+                    <div class="subsection-content">
+                        <div class="topic-list">
+                            <div class="topic-card programming">
+                                <h4>SQL Fundamentals</h4>
+                                <p>Queries, joins, aggregations, subqueries</p>
+                            </div>
+                            <div class="topic-card programming">
+                                <h4>Database Design</h4>
+                                <p>Normalization, indexes, relationships</p>
+                            </div>
+                            <div class="topic-card programming">
+                                <h4>PostgreSQL</h4>
+                                <p>Advanced features, performance tuning</p>
+                            </div>
+                            <div class="topic-card programming">
+                                <h4>NoSQL</h4>
+                                <p>MongoDB, Redis, document databases</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DevOps Section -->
+        <section class="section" id="devops">
+            <div class="section-header devops" onclick="toggleSection(this)">
+                <h2>DevOps</h2>
+                <span class="toggle">&#9660;</span>
+            </div>
+            <div class="section-content">
+                <div class="subsection">
+                    <div class="subsection-header" onclick="toggleSubsection(this)">
+                        <h3>CI/CD Pipelines</h3>
+                        <span class="arrow">&#9654;</span>
+                    </div>
+                    <div class="subsection-content">
+                        <div class="topic-list">
+                            <div class="topic-card devops">
+                                <h4>GitHub Actions</h4>
+                                <p>Workflows, actions, automation</p>
+                            </div>
+                            <div class="topic-card devops">
+                                <h4>GitLab CI</h4>
+                                <p>Pipelines, stages, runners</p>
+                            </div>
+                            <div class="topic-card devops">
+                                <h4>Jenkins</h4>
+                                <p>Pipelines, plugins, distributed builds</p>
+                            </div>
+                            <div class="topic-card devops">
+                                <h4>ArgoCD</h4>
+                                <p>GitOps, continuous delivery for Kubernetes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <div class="subsection-header" onclick="toggleSubsection(this)">
+                        <h3>Containerization</h3>
+                        <span class="arrow">&#9654;</span>
+                    </div>
+                    <div class="subsection-content">
+                        <div class="topic-list">
+                            <div class="topic-card devops">
+                                <h4>Docker</h4>
+                                <p>Images, containers, Dockerfile, compose</p>
+                            </div>
+                            <div class="topic-card devops">
+                                <h4>Kubernetes Basics</h4>
+                                <p>Pods, deployments, services, ingress</p>
+                            </div>
+                            <div class="topic-card devops">
+                                <h4>Kubernetes Advanced</h4>
+                                <p>Helm, operators, custom resources</p>
+                            </div>
+                            <div class="topic-card devops">
+                                <h4>Container Security</h4>
+                                <p>Image scanning, runtime security, policies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <div class="subsection-header" onclick="toggleSubsection(this)">
+                        <h3>Infrastructure as Code</h3>
+                        <span class="arrow">&#9654;</span>
+                    </div>
+                    <div class="subsection-content">
+                        <div class="topic-list">
+                            <div class="topic-card devops">
+                                <h4>Terraform</h4>
+                                <p>Providers, modules, state management</p>
+                            </div>
+                            <div class="topic-card devops">
+                                <h4>Ansible</h4>
+                                <p>Playbooks, roles, inventory management</p>
+                            </div>
+                            <div class="topic-card devops">
+                                <h4>Pulumi</h4>
+                                <p>Infrastructure as real code</p>
+                            </div>
+                            <div class="topic-card devops">
+                                <h4>CloudFormation</h4>
+                                <p>AWS native infrastructure templates</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <div class="subsection-header" onclick="toggleSubsection(this)">
+                        <h3>Monitoring & Observability</h3>
+                        <span class="arrow">&#9654;</span>
+                    </div>
+                    <div class="subsection-content">
+                        <div class="topic-list">
+                            <div class="topic-card devops">
+                                <h4>Prometheus</h4>
+                                <p>Metrics collection, PromQL, alerting</p>
+                            </div>
+                            <div class="topic-card devops">
+                                <h4>Grafana</h4>
+                                <p>Dashboards, visualization, alerting</p>
+                            </div>
+                            <div class="topic-card devops">
+                                <h4>ELK Stack</h4>
+                                <p>Elasticsearch, Logstash, Kibana</p>
+                            </div>
+                            <div class="topic-card devops">
+                                <h4>Distributed Tracing</h4>
+                                <p>Jaeger, Zipkin, OpenTelemetry</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cloud Computing Section -->
+        <section class="section" id="cloud">
+            <div class="section-header cloud" onclick="toggleSection(this)">
+                <h2>Cloud Computing</h2>
+                <span class="toggle">&#9660;</span>
+            </div>
+            <div class="section-content">
+                <div class="subsection">
+                    <div class="subsection-header" onclick="toggleSubsection(this)">
+                        <h3>AWS</h3>
+                        <span class="arrow">&#9654;</span>
+                    </div>
+                    <div class="subsection-content">
+                        <div class="topic-list">
+                            <div class="topic-card cloud">
+                                <h4>EC2 & Compute</h4>
+                                <p>Instances, auto-scaling, load balancing</p>
+                            </div>
+                            <div class="topic-card cloud">
+                                <h4>S3 & Storage</h4>
+                                <p>Object storage, EBS, lifecycle policies</p>
+                            </div>
+                            <div class="topic-card cloud">
+                                <h4>Lambda & Serverless</h4>
+                                <p>Functions, API Gateway, Step Functions</p>
+                            </div>
+                            <div class="topic-card cloud">
+                                <h4>RDS & Databases</h4>
+                                <p>Managed databases, Aurora, DynamoDB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <div class="subsection-header" onclick="toggleSubsection(this)">
+                        <h3>Azure</h3>
+                        <span class="arrow">&#9654;</span>
+                    </div>
+                    <div class="subsection-content">
+                        <div class="topic-list">
+                            <div class="topic-card cloud">
+                                <h4>Azure VMs</h4>
+                                <p>Virtual machines, scale sets, availability</p>
+                            </div>
+                            <div class="topic-card cloud">
+                                <h4>Azure Functions</h4>
+                                <p>Serverless compute, triggers, bindings</p>
+                            </div>
+                            <div class="topic-card cloud">
+                                <h4>AKS</h4>
+                                <p>Azure Kubernetes Service, managed clusters</p>
+                            </div>
+                            <div class="topic-card cloud">
+                                <h4>Azure DevOps</h4>
+                                <p>Pipelines, boards, repos, artifacts</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <div class="subsection-header" onclick="toggleSubsection(this)">
+                        <h3>Google Cloud Platform</h3>
+                        <span class="arrow">&#9654;</span>
+                    </div>
+                    <div class="subsection-content">
+                        <div class="topic-list">
+                            <div class="topic-card cloud">
+                                <h4>Compute Engine</h4>
+                                <p>VMs, instance groups, preemptible VMs</p>
+                            </div>
+                            <div class="topic-card cloud">
+                                <h4>GKE</h4>
+                                <p>Google Kubernetes Engine, Autopilot</p>
+                            </div>
+                            <div class="topic-card cloud">
+                                <h4>Cloud Functions</h4>
+                                <p>Event-driven serverless functions</p>
+                            </div>
+                            <div class="topic-card cloud">
+                                <h4>BigQuery</h4>
+                                <p>Data warehouse, analytics, ML integration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cybersecurity Section -->
+        <section class="section" id="security">
+            <div class="section-header security" onclick="toggleSection(this)">
+                <h2>Cybersecurity</h2>
+                <span class="toggle">&#9660;</span>
+            </div>
+            <div class="section-content">
+                <div class="subsection">
+                    <div class="subsection-header" onclick="toggleSubsection(this)">
+                        <h3>Network Security</h3>
+                        <span class="arrow">&#9654;</span>
+                    </div>
+                    <div class="subsection-content">
+                        <div class="topic-list">
+                            <div class="topic-card security">
+                                <h4>Firewalls & VPNs</h4>
+                                <p>Network protection, tunneling, access control</p>
+                            </div>
+                            <div class="topic-card security">
+                                <h4>Network Protocols</h4>
+                                <p>TCP/IP, DNS, TLS/SSL security</p>
+                            </div>
+                            <div class="topic-card security">
+                                <h4>Intrusion Detection</h4>
+                                <p>IDS/IPS, SIEM, threat detection</p>
+                            </div>
+                            <div class="topic-card security">
+                                <h4>Zero Trust</h4>
+                                <p>Zero trust architecture, microsegmentation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <div class="subsection-header" onclick="toggleSubsection(this)">
+                        <h3>Application Security</h3>
+                        <span class="arrow">&#9654;</span>
+                    </div>
+                    <div class="subsection-content">
+                        <div class="topic-list">
+                            <div class="topic-card security">
+                                <h4>OWASP Top 10</h4>
+                                <p>Common vulnerabilities and mitigations</p>
+                            </div>
+                            <div class="topic-card security">
+                                <h4>Secure Coding</h4>
+                                <p>Input validation, output encoding, SAST</p>
+                            </div>
+                            <div class="topic-card security">
+                                <h4>API Security</h4>
+                                <p>Authentication, authorization, rate limiting</p>
+                            </div>
+                            <div class="topic-card security">
+                                <h4>Security Testing</h4>
+                                <p>Penetration testing, vulnerability scanning</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <div class="subsection-header" onclick="toggleSubsection(this)">
+                        <h3>Identity & Access</h3>
+                        <span class="arrow">&#9654;</span>
+                    </div>
+                    <div class="subsection-content">
+                        <div class="topic-list">
+                            <div class="topic-card security">
+                                <h4>OAuth & OIDC</h4>
+                                <p>Modern authentication protocols</p>
+                            </div>
+                            <div class="topic-card security">
+                                <h4>IAM</h4>
+                                <p>Identity and access management, RBAC</p>
+                            </div>
+                            <div class="topic-card security">
+                                <h4>SSO & MFA</h4>
+                                <p>Single sign-on, multi-factor authentication</p>
+                            </div>
+                            <div class="topic-card security">
+                                <h4>Secrets Management</h4>
+                                <p>Vault, key management, rotation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Learning Hub - Expand Your Knowledge</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
