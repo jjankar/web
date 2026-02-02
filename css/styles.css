@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+nav {
+    background: #2d3748;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.section {
+    margin-bottom: 3rem;
+}
+
+.section-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-header.it {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.section-header.lifescience {
+    background: linear-gradient(135deg, #ee0979 0%, #ff6a00 100%);
+}
+
+.section-header h2 {
+    font-size: 1.8rem;
+}
+
+.section-header .toggle {
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.section-header.collapsed .toggle {
+    transform: rotate(-90deg);
+}
+
+.section-content {
+    background: white;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.section-content.hidden {
+    display: none;
+}
+
+.subsection {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.subsection:last-child {
+    border-bottom: none;
+}
+
+.subsection-header {
+    padding: 1rem 1.5rem;
+    background: #f8fafc;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.subsection-header:hover {
+    background: #edf2f7;
+}
+
+.subsection-header h3 {
+    color: #4a5568;
+    font-size: 1.2rem;
+}
+
+.subsection-header .arrow {
+    color: #718096;
+    transition: transform 0.3s;
+}
+
+.subsection-header.expanded .arrow {
+    transform: rotate(90deg);
+}
+
+.subsection-content {
+    padding: 1.5rem;
+    background: white;
+    display: none;
+}
+
+.subsection-content.show {
+    display: block;
+}
+
+.topic-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.topic-card {
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 4px solid #667eea;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.topic-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.topic-card.it {
+    border-left-color: #11998e;
+}
+
+.topic-card.lifescience {
+    border-left-color: #ee0979;
+}
+
+.topic-card h4 {
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.topic-card p {
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+footer {
+    background: #2d3748;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .topic-list {
+        grid-template-columns: 1fr;
+    }
+}
